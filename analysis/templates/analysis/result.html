@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis Result</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Result</h1>
+        <p>SSIM Score: {{ ssim_score }}</p>
+        <div class="image-container">
+            <div class="image-item">
+                <h2>Original Image</h2>
+                <img src="{{ original_image }}" alt="Original Image">
+            </div>
+            <div class="image-item">
+                <h2>Tampered Image</h2>
+                <img src="{{ tampered_image }}" alt="Tampered Image">
+            </div>
+            <div class="image-item">
+                <h2>Difference Image</h2>
+                <img src="{{ diff_image }}" alt="Difference Image">
+            </div>
+            <div class="image-item">
+                <h2>Threshold Image</h2>
+                <img src="{{ thresh_image }}" alt="Threshold Image">
+            </div>
+        </div>
+        <a href="{% url 'index' %}">Upload more images</a>
+    </div>
+</body>
+</html>
